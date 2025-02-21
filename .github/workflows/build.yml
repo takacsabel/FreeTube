@@ -25,23 +25,23 @@ jobs:
         - runtime: linux-x64
           os: ubuntu-latest
 
-        - runtime: linux-armv7l
-          os: ubuntu-latest
+        # - runtime: linux-armv7l
+        #   os: ubuntu-latest
 
-        - runtime: linux-arm64
-          os: ubuntu-latest
+        # - runtime: linux-arm64
+        #   os: ubuntu-latest
 
-        - runtime: osx-x64
-          os: macOS-latest
+        # - runtime: osx-x64
+        #   os: macOS-latest
 
-        - runtime: osx-arm64
-          os: macOS-latest
+        # - runtime: osx-arm64
+        #   os: macOS-latest
 
-        - runtime: win-x64
-          os: windows-latest
+        # - runtime: win-x64
+        #   os: windows-latest
 
-        - runtime: win-arm64
-          os: windows-latest
+        # - runtime: win-arm64
+        #   os: windows-latest
 
     runs-on: ${{ matrix.os }}
 
