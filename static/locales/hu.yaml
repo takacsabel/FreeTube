@@ -327,9 +327,15 @@ Settings:
       Nordic: Skandináv
       Solarized Light: Szolarizált világos
       Solarized Dark: Szolarizált sötét
-      Gruvbox Light: Világos Gruvbox
-      Gruvbox Dark: Sötét Gruvbox
+      Gruvbox Light: Gruvbox világos
+      Gruvbox Dark: Gruvbox sötét
       Catppuccin Frappe: Catppuccin Frappe
+      Everforest Dark Medium: Everforest közepes sötét
+      Everforest Light Hard: Everforest erős világos
+      Everforest Light Medium: Everforest közepes világos
+      Everforest Light Low: Everforest gyenge világos
+      Everforest Dark Hard: Everforest erős sötét
+      Everforest Dark Low: Everforest gyenge sötét
     Main Color Theme:
       Main Color Theme: 'Fő színtéma'
       Red: 'Vörös'
@@ -340,7 +346,7 @@ Settings:
       Blue: 'Kék'
       Light Blue: 'Világoskék'
       Cyan: 'Ciánkék'
-      Teal: 'Páva-kék'
+      Teal: 'Pávakék'
       Green: 'Zöld'
       Light Green: 'Világoszöld'
       Lime: 'Citrom-zöld'
@@ -348,7 +354,7 @@ Settings:
       Amber: 'Borostyán-sárga'
       Orange: 'Narancssárga'
       Deep Orange: 'Sötét narancssárga'
-      Dracula Cyan: 'Drakula Ciánkék'
+      Dracula Cyan: 'Drakula ciánkék'
       Dracula Green: 'Drakula Zöld'
       Dracula Orange: 'Drakula Narancssárga'
       Dracula Pink: 'Drakula Rózsaszín'
@@ -359,8 +365,8 @@ Settings:
       Catppuccin Mocha Mauve: Catppuccin Mocha Mályvaszínű
       Catppuccin Mocha Red: Catppuccin Mocha Vörös
       Catppuccin Mocha Green: Catppuccin Mocha Zöld
-      Catppuccin Mocha Teal: Catppuccin Mocha Páva-kék
-      Catppuccin Mocha Sky: Catppuccin Mocha Égszínkék
+      Catppuccin Mocha Teal: Catppuccin Mocha pávakék
+      Catppuccin Mocha Sky: Catppuccin Mocha égszínkék
       Catppuccin Mocha Sapphire: Catppuccin Mocha Zafír
       Catppuccin Mocha Pink: Catppuccin Mocha Rózsaszín
       Catppuccin Mocha Blue: Catppuccin Mocha Kék
@@ -377,16 +383,16 @@ Settings:
       Solarized Green: Szolarizált zöld
       Solarized Magenta: Szolarizált magenta
       Solarized Violet: Szolarizált ibolya
-      Gruvbox Dark Yellow: Sötétsárga Gruvbox
-      Gruvbox Dark Blue: Sötétkék Gruvbox
-      Gruvbox Dark Aqua: Sötét-vízkék Gruvbox
-      Gruvbox Dark Orange: Sötét-narancssárga Gruvbox
-      Gruvbox Light Red: Világospiros Gruvbox
-      Gruvbox Light Blue: Világoskék Gruvbox
-      Gruvbox Dark Green: Sötétzöld Gruvbox
-      Gruvbox Dark Purple: Sötétlila Gruvbox
-      Gruvbox Light Orange: Világos-narancssárga Gruvbox
-      Gruvbox Light Purple: Világoslila Gruvbox
+      Gruvbox Dark Yellow: Gruvbox sötét sárga
+      Gruvbox Dark Blue: Gruvbox sötét kék
+      Gruvbox Dark Aqua: Gruvbox sötét vízkék
+      Gruvbox Dark Orange: Gruvbox sötét narancssárga
+      Gruvbox Light Red: Gruvbox világos piros
+      Gruvbox Light Blue: Gruvbox világos kék
+      Gruvbox Dark Green: Gruvbox sötét zöld
+      Gruvbox Dark Purple: Gruvbox sötét lila
+      Gruvbox Light Orange: Gruvbox világos narancssárga
+      Gruvbox Light Purple: Gruvbox világos lila
       Catppuccin Frappe Pink: Catppuccin Frappe Rózsaszín
       Catppuccin Frappe Mauve: Catppuccin Frappe Mályva
       Catppuccin Frappe Rosewater: Catppuccin Frappe Rózsavíz
@@ -396,11 +402,25 @@ Settings:
       Catppuccin Frappe Peach: Catppuccin Frappe Barackvirág
       Catppuccin Frappe Yellow: Catppuccin Frappe Sárga
       Catppuccin Frappe Green: Catppuccin Frappe Zöld
-      Catppuccin Frappe Teal: Catppuccin Frappe Páva-kék
-      Catppuccin Frappe Sky: Catppuccin Frappe Égszínkék
+      Catppuccin Frappe Teal: Catppuccin Frappe pávakék
+      Catppuccin Frappe Sky: Catppuccin Frappe égszínkék
       Catppuccin Frappe Blue: Catppuccin Frappe Kék
       Catppuccin Frappe Lavender: Catppuccin Frappe Levendula
-      Catppuccin Frappe Sapphire: Catppuccin Frappe Zafírkék
+      Catppuccin Frappe Sapphire: Catppuccin Frappe zafírkék
+      Everforest Dark Orange: Everforest sötét narancssárga
+      Everforest Dark Green: Everforest sötét zöld
+      Everforest Dark Aqua: Everforest sötét vízkék
+      Everforest Dark Blue: Everforest sötét kék
+      Everforest Light Red: Everforest világos vörös
+      Everforest Light Orange: Everforest világos narancssárga
+      Everforest Light Yellow: Everforest világos sárga
+      Everforest Light Green: Everforest világos zöld
+      Everforest Light Blue: Everforest világos kék
+      Everforest Dark Red: Everforest sötét vörös
+      Everforest Dark Yellow: Everforest sötét sárga
+      Everforest Light Purple: Everforest világos lila
+      Everforest Dark Purple: Everforest sötét lila
+      Everforest Light Aqua: Everforest világos vízkék
     Secondary Color Theme: 'Másodlagos színtéma'
         #* Main Color Theme
     UI Scale: Felhasználói felület méretezése
@@ -597,8 +617,9 @@ Settings:
     Hide Profile Pictures in Comments: Profilképek elrejtése a hozzászólásokban
     Hide Subscriptions Community: Közösségi feliratkozások elrejtése
     Hide Channels Invalid: Érvénytelen a megadott csatornaazonosító
-    Hide Channels Disabled Message: Egyes csatornákat letiltottak az azonosító használatával,
-      és nem dolgozták fel őket. A jellemző le van tiltva az azonosítók frissítésekor
+    Hide Channels Disabled Message: Egyes csatornákat letiltottak az azonosító miatt,
+      és nem dolgozták fel őket. A funkció le van tiltva, amíg ezek az azonosítók
+      nem frissülnek
     Hide Channels Already Exists: Már létezik a csatornaazonosító
     Hide Channels API Error: Hiba történt a megadott azonosítóval rendelkező felhasználó
       lekérésekor. Ellenőrizze még egyszer, hogy helyes-e az azonosító.
@@ -607,6 +628,7 @@ Settings:
       listák elrejtése
     Hide Channel Home: Csatorna „főoldal” lap elrejtése
     Show Added Items: Hozzáadott elemek megjelenítése
+    Hide Channel Courses: „Tanfolyamok” csatornalap elrejtése
   The app needs to restart for changes to take effect. Restart and apply change?: Az
     alkalmazásnak újra kell indulnia, hogy a változtatások életbe lépjenek. Induljon
     újra és alkalmazza a módosítást?
@@ -836,6 +858,10 @@ Channel:
   Home:
     View Playlist: Lejátszási listák megtekintése
     Home: Főoldal
+  Courses:
+    This channel does not currently have any courses: Ezen a csatornán jelenleg nincsenek
+      tanfolyamok
+    Courses: Tanfolyamok
 Video:
   Mark As Watched: 'Megjelölés megnézettként'
   Remove From History: 'Eltávolítás az előzményekből'
@@ -1195,7 +1221,7 @@ Hashtag:
   This hashtag does not currently have any videos: Ez a kettős kereszt jelenleg nem
     rendelkezik videókkal
 Channel Hidden: '{channel} hozzáadva a csatornaszűrőhöz'
-Go to page: Ugrás a(z) {page}. oldalra
+Go to page: Ugrás a(z) {page} oldalra
 Channel Unhidden: 'A(z) {channel} el lett távolítva a csatornaszűrőből'
 Trimmed input must be at least N characters long: A vágott bemenetnek legalább 1 karakter
   hosszúnak kell lennie | A vágott bemenetnek legalább {length} karakter hosszúnak

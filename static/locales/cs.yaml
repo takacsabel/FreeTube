@@ -571,6 +571,7 @@ Settings:
       fráze
     Hide Channel Home: Skrýt kartu „Domovská stránka“ u kanálů
     Show Added Items: Zobrazit přidané položky
+    Hide Channel Courses: Skrýt kartu „Kurzy“ u kanálů
   Data Settings:
     Data Settings: 'Data'
     Select Export Type: 'Vybrat typ exportu'
@@ -805,7 +806,7 @@ Channel:
       Search for: Hledat štítek „{tag}“
     Details: Podrobnosti
     Joined: Připojeno
-    Location: Umístěí
+    Location: Umístění
   This channel is age-restricted and currently cannot be viewed in FreeTube.: Tento
     kanál je věkově omezen a v současné době jej nelze procházet na FreeTube.
   This channel does not exist: Tento kanál neexistuje
@@ -839,6 +840,10 @@ Channel:
   Home:
     Home: Domovská stránka
     View Playlist: Zobrazit playlist
+  Courses:
+    Courses: Kurzy
+    This channel does not currently have any courses: Tento kanál momentálně nemá
+      žádné kurzy
 Video:
   Mark As Watched: 'Označit jako zhlédnuto'
   Remove From History: 'Odstranit z historie'

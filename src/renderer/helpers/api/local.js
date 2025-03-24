@@ -63,13 +63,14 @@ async function createInnertube({ withPlayer = false, location = undefined, safet
   })
 }
 
+/** @type {Innertube | null} */
 let searchSuggestionsSession = null
 
 export async function getLocalSearchSuggestions(query) {
+  // The search suggestions endpoint does not like search queries larger than SEARCH_CHAR_LIMIT
+  // so return an empty array instead
   if (query.length > SEARCH_CHAR_LIMIT) {
-    // There's an event handler on the search input so avoid displaying an exception
-    console.error(`Query is over ${SEARCH_CHAR_LIMIT} characters`)
-    return
+    return []
   }
 
   // reuse innertube instance to keep the search suggestions snappy
@@ -197,16 +198,24 @@ export async function getLocalSearchContinuation(continuationData) {
 export async function getLocalVideoInfo(id) {
   const webInnertube = await createInnertube({ withPlayer: true, generateSessionLocally: false })
 
-  let poToken
+  // based on the videoId (added to the body of the /player request)
+  let contentPoToken
+  // based on the visitor data (added to the streaming URLs)
+  let sessionPoToken
 
   if (process.env.IS_ELECTRON) {
     const { ipcRenderer } = require('electron')
 
     try {
-      poToken = await ipcRenderer.invoke(IpcChannels.GENERATE_PO_TOKEN, webInnertube.session.context.client.visitorData)
+      ({ contentPoToken, sessionPoToken } = await ipcRenderer.invoke(
+        IpcChannels.GENERATE_PO_TOKENS,
+        id,
+        webInnertube.session.context.client.visitorData,
+        JSON.stringify(webInnertube.session.context)
+      ))
 
-      webInnertube.session.po_token = poToken
-      webInnertube.session.player.po_token = poToken
+      webInnertube.session.po_token = contentPoToken
+      webInnertube.session.player.po_token = sessionPoToken
     } catch (error) {
       console.error('Local API, poToken generation failed', error)
       throw error
@@ -226,8 +235,8 @@ export async function getLocalVideoInfo(id) {
     const webEmbeddedInnertube = await createInnertube({ clientType: ClientType.WEB_EMBEDDED })
     webEmbeddedInnertube.session.context.client.visitorData = webInnertube.session.context.client.visitorData
 
-    if (poToken) {
-      webEmbeddedInnertube.session.po_token = poToken
+    if (contentPoToken) {
+      webEmbeddedInnertube.session.po_token = contentPoToken
     }
 
     const videoId = hasTrailer && trailerIsAgeRestricted ? info.playability_status.error_screen.video_id : id
@@ -271,15 +280,20 @@ export async function getLocalVideoInfo(id) {
 
   if (info.streaming_data) {
     decipherFormats(info.streaming_data.formats, webInnertube.session.player)
-    decipherFormats(info.streaming_data.adaptive_formats, webInnertube.session.player)
+
+    const firstFormat = info.streaming_data.adaptive_formats[0]
+
+    if (firstFormat.url || firstFormat.signature_cipher || firstFormat.cipher) {
+      decipherFormats(info.streaming_data.adaptive_formats, webInnertube.session.player)
+    }
 
     if (info.streaming_data.dash_manifest_url) {
       let url = info.streaming_data.dash_manifest_url
 
       if (url.includes('?')) {
-        url += `&pot=${encodeURIComponent(poToken)}&mpd_version=7`
+        url += `&pot=${encodeURIComponent(sessionPoToken)}&mpd_version=7`
       } else {
-        url += `${url.endsWith('/') ? '' : '/'}pot/${encodeURIComponent(poToken)}/mpd_version/7`
+        url += `${url.endsWith('/') ? '' : '/'}pot/${encodeURIComponent(sessionPoToken)}/mpd_version/7`
       }
 
       info.streaming_data.dash_manifest_url = url
